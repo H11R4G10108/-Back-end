@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843f786f-238c-40e5-89b4-981941d39eec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="843f786f-238c-40e5-89b4-981941d39eec" name="Changes" comment="upload">
+      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/manage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "H11R4G10108"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/H11R4G10108/EcomProject.git",
+    "accountId": "3420d557-99c9-46d7-bb64-05697e0ce25b"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 6
 }]]></component>
@@ -79,6 +92,30 @@
       <option name="presentableId" value="Default" />
       <updated>1715587903370</updated>
     </task>
+    <task id="LOCAL-00001" summary="upload">
+      <option name="closed" value="true" />
+      <created>1715594024615</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715594024615</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload" />
   </component>
 </project>
