@@ -5,52 +5,99 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="843f786f-238c-40e5-89b4-981941d39eec" name="Changes" comment="upload">
-      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/Ecom/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/migrations/0002_remove_user_groups_alter_user_username.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/core/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/myapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/Ecom/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/Ecom/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/Ecom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/Ecom/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/public/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/public/logo512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/myapp/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "H11R4G10108"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;H11R4G10108&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/H11R4G10108/EcomProject.git",
-    "accountId": "3420d557-99c9-46d7-bb64-05697e0ce25b"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/H11R4G10108/EcomProject.git&quot;,
+    &quot;accountId&quot;: &quot;3420d557-99c9-46d7-bb64-05697e0ce25b&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2gP8YxAzH5INwuH4GTGUfI9orrq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "Python.runserver.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/intern.nlpuyen/PycharmProjects/pythonProject/Ecom"
+    "last_opened_file_path": "C:/Users/intern.nlpuyen/PycharmProjects/pythonProject/Ecom",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\intern.nlpuyen\PycharmProjects\pythonProject\Ecom" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="runserver" type="PythonConfigurationType" factoryName="Python">
       <module name="pythonProject" />
@@ -115,6 +162,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="upload" />
     <option name="LAST_COMMIT_MESSAGE" value="upload" />
   </component>
