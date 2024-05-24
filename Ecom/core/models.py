@@ -1,16 +1,13 @@
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.utils import timezone
-from djmoney.models.fields import MoneyField
 
 
 class User(AbstractUser):
-    username = models.CharField(
-        max_length=10,
-        help_text="Username")
-    email = models.EmailField(
-        help_text="The User's email address.", unique=True)
+    username = models.CharField(max_length=10, help_text="Username")
+    email = models.EmailField(help_text="The User's email address.", unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
@@ -19,58 +16,59 @@ class User(AbstractUser):
     groups = None
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
+
     def __str__(self):
         return self.email
 
 
 class ShippingInfor(models.Model):
-    shipID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    shipID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     user = models.ForeignKey(
          User,
          on_delete=models.CASCADE,
-         help_text="The user of the shipping information")
-    tel = PhoneNumberField(null=False, blank=False, unique=True)
+         help_text="The user of the shipping information.")
+    tel = PhoneNumberField()
     city = models.CharField(max_length=64)
     street = models.CharField(max_length=64)
-    Is_default = models.BooleanField()
+    status = models.BooleanField()
 
 
 class Status(models.Model):
     class StatusChoice(models.TextChoices):
-         Pending = "Pending", "Pending"
-         Processing = "Processing", "Processing"
-         Shipping = "Shipping", "Shipping"
-         Delivered = "Delivered", "Delivered"
-
-    statusID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+        Pending = "Pending", "Pending"
+        Processing = "Processing", "Processing"
+        Shipping = "Shipping", "Shipping"
+        Delivered = "Delivered", "Delivered"
+    statusID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     status = models.CharField(
         verbose_name="The order's status",
-        choices=StatusChoice.choices, max_length=20)
+        choices=StatusChoice.choices, max_length=20, default='Pending')
 
 
 class Size(models.Model):
     class SizeChoice(models.TextChoices):
-         S = "S", "S"
-         M = "M", "M"
-         L = "L", "L"
-         XL = "XL", "XL"
-         FreeSize = "Free Size", "Free Size"
+        S = "S", "S"
+        M = "M", "M"
+        L = "L", "L"
+        XL = "XL", "XL"
+        FreeSize = "Free Size", "Free Size"
 
-    sizeID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
-    status = models.CharField(
+    sizeID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
+    size = models.CharField(
         verbose_name="The product's size",
         choices=SizeChoice.choices, max_length=10)
 
 
 class Category(models.Model):
-    catID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, VERBOSE_NAME='ID')
-    category = models.CharField(verbose_name="The product's category", max_length=10)
+    catID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
+    category = models.CharField(verbose_name="The product's category", max_length=50)
 
+    def __str__(self):
+        return self.category
 
-#Product(ProductID, CatID, SizeID, Name, Rating (backend xử lý), Price, Price_afterdiscount (=old-(old*discount)), Stock, Image(đường dẫn dạng related), Description)
 
 class Product(models.Model):
-    productID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, VERBOSE_NAME='ID')
+    productID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     category = models.ForeignKey(
          Category,
          on_delete=models.CASCADE,
@@ -79,20 +77,75 @@ class Product(models.Model):
          Size,
          on_delete=models.CASCADE,
          help_text="The size of the product")
-    name = models.CharField(verbose_name="The product's name", max_length=50)
-    price = MoneyField(decimal_places=2, default=0, default_currency='USD', max_digits=11)
-    price_afterdiscount = MoneyField(decimal_places=2, default=0, default_currency='USD', max_digits=11, null=True)
-    stock = models.IntegerField(help_text="Stock")
-    image = models.ImageField(upload_to="product_image/", verbose_name="The product's image", null=True, default='default.jpg')
-    description = models.TextField(help_text="The product description text.")
+    name = models.CharField(max_length=50)
+    price = models.DecimalField(decimal_places=2, default=0, max_digits=65)
+    price_discounted = models.DecimalField(decimal_places=2, default=0, max_digits=65, null=True)
+    stock = models.IntegerField()
+    image = models.ImageField(upload_to="product_image/", verbose_name="The product's image",
+                              null=True, default='default.jpg')
+    description = models.TextField(null=True)
+
     def __str__(self):
         return self.name
-#Promotion(PromoID, ProductID, Discount(%), Start_date, End_date, Description, Type)
 
 
 class Promotion(models.Model):
-    promoID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, VERBOSE_NAME='ID')
+    promoID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     product = models.ForeignKey(
          Product,
          on_delete=models.CASCADE,
          help_text="The promotion for the product")
+    discount = models.DecimalField(decimal_places=2, max_digits=65)
+    type = models.BooleanField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    description = models.TextField(null=True)
+
+
+class ProductReview(models.Model):
+    reviewID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
+    user = models.ForeignKey(
+         User,
+         on_delete=models.CASCADE,
+         help_text="The user of the shipping information")
+    product = models.ForeignKey(
+         Product,
+         on_delete=models.CASCADE,
+         help_text="The promotion for the product")
+    rate = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    review = models.TextField(null=True)
+    date_review = models.DateTimeField(default=timezone.now)
+
+
+class Order(models.Model):
+    orderID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
+    user = models.ForeignKey(
+         User,
+         on_delete=models.CASCADE,
+         help_text="The user of the order")
+    shipping = models.ForeignKey(
+         ShippingInfor,
+         on_delete=models.CASCADE,
+         help_text="The shipping ìnformation of the order")
+    status = models.ForeignKey(
+         Status,
+         on_delete=models.CASCADE,
+         help_text="The status of the order")
+    date_order = models.DateTimeField(default=timezone.now)
+    shipping_fee = models.DecimalField(decimal_places=2, max_digits=65)
+    total_shipping = models.DecimalField(decimal_places=2, max_digits=65)
+
+
+class OrderDetail(models.Model):
+    detailID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
+    order = models.ForeignKey(
+        Order,
+        on_delete=models.CASCADE,
+        help_text="The order that the detail belongs to")
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        help_text="The product in the detail")
+    quantity = models.IntegerField(default=0)
+    total = models.DecimalField(decimal_places=2, max_digits=65)
+    
