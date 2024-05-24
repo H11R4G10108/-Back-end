@@ -148,4 +148,4 @@ class OrderDetail(models.Model):
         help_text="The product in the detail")
     quantity = models.IntegerField(default=0)
     total = models.DecimalField(decimal_places=2, max_digits=65)
-    
+
