@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843f786f-238c-40e5-89b4-981941d39eec" name="Changes" comment="upload" />
+    <list default="true" id="843f786f-238c-40e5-89b4-981941d39eec" name="Changes" comment="upload">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/Ecom/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/Ecom/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/models.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +40,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/H11R4G10108/EcomProject.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/H11R4G10108/Prj.git&quot;,
     &quot;accountId&quot;: &quot;3420d557-99c9-46d7-bb64-05697e0ce25b&quot;
   }
 }</component>
@@ -62,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/intern.nlpuyen/PycharmProjects/pythonProject/Ecom&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -159,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716533310063</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="upload">
+      <option name="closed" value="true" />
+      <created>1716533841470</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716533841470</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

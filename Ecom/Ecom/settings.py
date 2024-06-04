@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_tailwind',
     'phonenumber_field',
-    'djmoney',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"

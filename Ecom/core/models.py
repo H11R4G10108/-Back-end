@@ -132,7 +132,7 @@ class Order(models.Model):
          on_delete=models.CASCADE,
          help_text="The status of the order")
     date_order = models.DateTimeField(default=timezone.now)
-    shipping_fee = models.DecimalField(decimal_places=2, max_digits=65)
+    shipping_fee = models.DecimalField(decimal_places=2, max_digits=65, default=10)
     total_shipping = models.DecimalField(decimal_places=2, max_digits=65)
 
 
