@@ -6,7 +6,7 @@ from django.utils import timezone
 
 
 class User(AbstractUser):
-    username = models.CharField(max_length=10, help_text="Username")
+    username = models.CharField(max_length=10, help_text="Username", unique=True)
     email = models.EmailField(help_text="The User's email address.", unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -14,11 +14,11 @@ class User(AbstractUser):
     first_name = None
     last_name = None
     groups = None
-    USERNAME_FIELD = "email"
+    USERNAME_FIELD = "username"
     REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.email
+        return self.username
 
 
 class ShippingInfor(models.Model):
