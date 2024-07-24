@@ -5,34 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="843f786f-238c-40e5-89b4-981941d39eec" name="Changes" comment="upload">
-      <change afterPath="$PROJECT_DIR$/Ecom/core/migrations/0003_alter_user_username.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/core/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_Ew2HMZk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_MgM9uMG.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_NrzLQfg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_S4jBaTr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_TbcgfXe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_XZvXUzT.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_d7hC1ih.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_gBGUNPh.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ecom/Ecom/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/Ecom/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/Ecom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/Ecom/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/core/api_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/api_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/core/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/core/migrations/0003_alter_user_username.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Ecom/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecom/core/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ecom/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/media/product_image/default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/media/default.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/api_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/myapp/tailwind.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +41,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="hiiragi &lt;luuphuonguyen04@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--tags" />
@@ -88,14 +86,16 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Python.runserver.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/intern.nlpuyen/PycharmProjects/pythonProject/Ecom&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/back-end&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\back-end\Ecom\core" />
       <recent name="C:\Users\intern.nlpuyen\PycharmProjects\pythonProject\Ecom\media" />
       <recent name="C:\Users\intern.nlpuyen\PycharmProjects\pythonProject\Ecom" />
     </key>
@@ -110,8 +110,8 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.11 (pythonProject)" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\intern.nlpuyen\PycharmProjects\pythonProject\Ecom" />
+      <option name="SDK_NAME" value="Python 3.12" />
+      <option name="WORKING_DIRECTORY" value="D:\back-end" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -128,7 +128,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
       </set>
     </attachedChunks>
   </component>
@@ -213,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717468304179</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="upload">
+      <option name="closed" value="true" />
+      <created>1717583082507</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717583082507</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +229,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings>
+                  <option name="MATCH_CASE" value="true" />
+                </TextFilterSettings>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -231,5 +245,15 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="upload" />
     <option name="LAST_COMMIT_MESSAGE" value="upload" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Ecom/core/admin.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

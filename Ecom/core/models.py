@@ -1,8 +1,8 @@
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 from django.utils import timezone
+from django.db.models.signals import post_save
 
 
 class User(AbstractUser):
@@ -14,23 +14,34 @@ class User(AbstractUser):
     first_name = None
     last_name = None
     groups = None
-    USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = []
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username"]
 
     def __str__(self):
-        return self.username
+        return self.email
 
 
-class ShippingInfor(models.Model):
-    shipID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
+class CustomerAddress(models.Model):
+    addressID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     user = models.ForeignKey(
-         User,
-         on_delete=models.CASCADE,
-         help_text="The user of the shipping information.")
-    tel = PhoneNumberField()
+        User,
+        on_delete=models.CASCADE,
+        help_text="The user of the shipping information.")
+    name = models.CharField(max_length=50)
+    tel = models.CharField(max_length=10,
+                           validators=[
+                               RegexValidator(
+                                   regex=r'(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b',
+                                   message="Enter a valid phone number.",
+                                   code="invalid_phonenumber",
+                               ),
+                           ], )
     city = models.CharField(max_length=64)
     street = models.CharField(max_length=64)
-    status = models.BooleanField()
+    default = models.BooleanField()
+
+    def __str__(self):
+        return self.name
 
 
 class Status(models.Model):
@@ -39,10 +50,15 @@ class Status(models.Model):
         Processing = "Processing", "Processing"
         Shipping = "Shipping", "Shipping"
         Delivered = "Delivered", "Delivered"
+        Canceled = "Canceled", "Canceled"
+
     statusID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     status = models.CharField(
         verbose_name="The order's status",
         choices=StatusChoice.choices, max_length=20, default='Pending')
+
+    def __str__(self):
+        return self.status
 
 
 class Size(models.Model):
@@ -58,6 +74,9 @@ class Size(models.Model):
         verbose_name="The product's size",
         choices=SizeChoice.choices, max_length=10)
 
+    def __str__(self):
+        return self.size
+
 
 class Category(models.Model):
     catID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
@@ -70,16 +89,16 @@ class Category(models.Model):
 class Product(models.Model):
     productID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     category = models.ForeignKey(
-         Category,
-         on_delete=models.CASCADE,
-         help_text="The category of the product")
+        Category,
+        on_delete=models.CASCADE,
+        help_text="The category of the product")
     size = models.ForeignKey(
-         Size,
-         on_delete=models.CASCADE,
-         help_text="The size of the product")
+        Size,
+        on_delete=models.CASCADE,
+        help_text="The size of the product")
     name = models.CharField(max_length=50)
     price = models.DecimalField(decimal_places=2, default=0, max_digits=65)
-    price_discounted = models.DecimalField(decimal_places=2, default=0, max_digits=65, null=True)
+    price_discounted = models.DecimalField(decimal_places=2, default=0, max_digits=65, blank=True, null=True)
     stock = models.IntegerField()
     image = models.ImageField(upload_to="product_image/", verbose_name="The product's image",
                               null=True, default='default.jpg')
@@ -92,48 +111,64 @@ class Product(models.Model):
 class Promotion(models.Model):
     promoID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     product = models.ForeignKey(
-         Product,
-         on_delete=models.CASCADE,
-         help_text="The promotion for the product")
+        Product,
+        on_delete=models.CASCADE,
+        help_text="The promotion for the product")
     discount = models.DecimalField(decimal_places=2, max_digits=65)
     type = models.BooleanField()
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     description = models.TextField(null=True)
 
+    def __str__(self):
+        return self.product
+
 
 class ProductReview(models.Model):
     reviewID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     user = models.ForeignKey(
-         User,
-         on_delete=models.CASCADE,
-         help_text="The user of the shipping information")
+        User,
+        on_delete=models.CASCADE,
+        help_text="The user of the shipping information")
     product = models.ForeignKey(
-         Product,
-         on_delete=models.CASCADE,
-         help_text="The promotion for the product")
+        Product,
+        on_delete=models.CASCADE,
+        help_text="The promotion for the product")
     rate = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     review = models.TextField(null=True)
     date_review = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.product
 
 
 class Order(models.Model):
     orderID = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     user = models.ForeignKey(
-         User,
-         on_delete=models.CASCADE,
-         help_text="The user of the order")
-    shipping = models.ForeignKey(
-         ShippingInfor,
-         on_delete=models.CASCADE,
-         help_text="The shipping ìnformation of the order")
+        User,
+        on_delete=models.CASCADE,
+        help_text="The user of the order",
+        related_name="user_fk")
+    address = models.ForeignKey(
+        CustomerAddress,
+        on_delete=models.CASCADE,
+        help_text="The shipping ìnformation of the order",
+        related_name="address_fk"
+    )
     status = models.ForeignKey(
-         Status,
-         on_delete=models.CASCADE,
-         help_text="The status of the order")
+        Status,
+        on_delete=models.CASCADE,
+        help_text="The status of the order",
+        related_name="status_fk")
+    customer_name = models.TextField(max_length=256)
     date_order = models.DateTimeField(default=timezone.now)
-    shipping_fee = models.DecimalField(decimal_places=2, max_digits=65, default=10)
+    # date_order = models.DateField(default=timezone.now)
+    # time_order = models.TimeField(auto_now_add=True)
+    subtotal = models.DecimalField(decimal_places=2, max_digits=65)
+    shipping_fee = models.DecimalField(decimal_places=2, max_digits=65, default=5)
     total_shipping = models.DecimalField(decimal_places=2, max_digits=65)
+    def __str__(self):
+        return self.customer_name
 
 
 class OrderDetail(models.Model):
@@ -146,6 +181,22 @@ class OrderDetail(models.Model):
         Product,
         on_delete=models.CASCADE,
         help_text="The product in the detail")
-    quantity = models.IntegerField(default=0)
+    quantity = models.IntegerField(default=1)
     total = models.DecimalField(decimal_places=2, max_digits=65)
 
+    def __str__(self):
+        return f"{self.quantity} of {self.product.name}"
+
+    # def get_total_item_price(self):
+    #     return self.quantity * self.product.price
+    #
+    # def get_total_discount_item_price(self):
+    #     return self.quantity * self.product.price_discounted
+    #
+    # def get_amount_saved(self):
+    #     return self.get_total_item_price() - self.get_total_discount_item_price()
+    #
+    # def get_final_price(self):
+    #     if self.product.price_discounted:
+    #         return self.get_total_discount_item_price()
+    #     return self.get_total_item_price()
