@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="843f786f-238c-40e5-89b4-981941d39eec" name="Changes" comment="upload">
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_Ew2HMZk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_MgM9uMG.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_NrzLQfg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_S4jBaTr.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_TbcgfXe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_XZvXUzT.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_d7hC1ih.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ecom/media/product_image/default_gBGUNPh.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/Ecom/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/Ecom/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/Ecom/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/Ecom/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ecom/core/api_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/api_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/core/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/core/migrations/0003_alter_user_username.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecom/core/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ecom/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ecom/core/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +203,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717583082507</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="upload">
+      <option name="closed" value="true" />
+      <created>1721831341311</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1721831341311</updated>
+    </task>
+    <task id="LOCAL-00012" summary="upload">
+      <option name="closed" value="true" />
+      <created>1721831348657</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1721831348657</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

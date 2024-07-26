@@ -1,7 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from . import api_views
-from rest_framework_simplejwt import views as jwt_views
 router = DefaultRouter()
 from rest_framework_simplejwt.views import TokenRefreshView
 
@@ -19,7 +18,6 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/register/', api_views.RegisterView.as_view(), name='auth_register'),
     path('api/change-password/', api_views.ChangePasswordView.as_view(), name='change_password'),
-    # path('api/change-password/<int:pk>', api_views.change_password, name='change_password'),
     path('api/user/<int:pk>/address', api_views.AddressList.as_view(), name='address_list'),
     path('api/mark_default_address/<int:pk>/', api_views.mark_default_address, name='mark_default_address'),
     path('api/create-address/', api_views.address_create, name='address_create'),

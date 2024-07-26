@@ -44,20 +44,6 @@ class OrderDetailViewSet(viewsets.ModelViewSet):
     serializer_class = OrderDetailSerializer
     pagination_class = LimitOffsetPagination
 
-@api_view(['GET', 'POST', 'DELETE'])
-def user_list(request):
-    if request.method == 'GET':
-        users = User.objects.all()
-        users_serializer = UserSerializer(users, many=True)
-        return JsonResponse(users_serializer.data, safe=False)
-    elif request.method == 'POST':
-        user_data = JSONParser().parse(request)
-        users_serializer = UserSerializer(data=user_data)
-        if users_serializer.is_valid():
-            users_serializer.save()
-            return JsonResponse(users_serializer.data, status=status.HTTP_201_CREATED)
-        return JsonResponse(users_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
@@ -75,7 +61,9 @@ def getRoutes(request):
         'api/orderdetail',
         'api/user/<int:pk>/address',
         'api/mark_default_address/<int:pk>/',
-        'api/create-address/'
+        'api/create-address/',
+        'api/order/<int:pk>/detail'
+        'api/cancel-order/<int:pk>/'
 ]
     return Response(routes)
 class RegisterView(generics.CreateAPIView):
@@ -117,18 +105,6 @@ def address_create(request):
         address_serializer.save()
     return JsonResponse(address_serializer.data, status=status.HTTP_201_CREATED)
 
-@api_view(['PUT'])
-def address_update(request, pk):
-    address = CustomerAddress.objects.get(pk=pk)
-    default_value = request.POST.get('default')
-    if default_value == "true":
-        CustomerAddress.objects.update(default=False)
-    address_data = JSONParser().parse(request)
-    address_serializer = AddressSerializer(address, data=address_data)
-    if address_serializer.is_valid():
-        address_serializer.save()
-    return JsonResponse(address_serializer.data, status=status.HTTP_201_CREATED)
-
 class OrderDetailList(generics.ListAPIView):
     queryset = OrderDetail.objects.all()
     serializer_class = OrderDetailReadSerializer
@@ -136,15 +112,6 @@ class OrderDetailList(generics.ListAPIView):
         qs = super().get_queryset()
         order_id = self.kwargs['pk']
         qs = qs.filter(order__orderID=order_id)
-        return qs
-
-class OrderList(generics.ListAPIView):
-    queryset = Order.objects.all()
-    serializer_class = OrderReadSerializer
-    def get_queryset(self):
-        qs = super().get_queryset()
-        order_id = self.kwargs['pk']
-        qs = qs.filter(orderID=order_id)
         return qs
 
 @csrf_exempt
