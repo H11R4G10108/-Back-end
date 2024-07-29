@@ -80,6 +80,8 @@ class AddressList(generics.ListAPIView):
         user_id = self.kwargs['pk']
         qs = qs.filter(user__id=user_id)
         return qs
+
+
 @csrf_exempt
 def mark_default_address(request, pk):
     if request.method == "POST":
@@ -162,3 +164,11 @@ class CategoryProductViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+class OrderList(generics.ListAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderReadSerializer
+    def get_queryset(self):
+        qs = super().get_queryset()
+        user_id = self.kwargs['pk']
+        qs = qs.filter(user__id=user_id)
+        return qs

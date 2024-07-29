@@ -22,6 +22,7 @@ urlpatterns = [
     path('api/mark_default_address/<int:pk>/', api_views.mark_default_address, name='mark_default_address'),
     path('api/create-address/', api_views.address_create, name='address_create'),
     path('api/order/<int:pk>/detail', api_views.OrderDetailList.as_view(), name='order_detail_list'),
+    path('api/user/<int:pk>/order', api_views.OrderList.as_view(), name='order_list'),
     path('api/cancel-order/<int:pk>/', api_views.cancel_order, name='cancel_order'),
     path('', api_views.getRoutes),
 ]
